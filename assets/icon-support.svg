@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#6BBFED" opacity="0.1"/>
+  <g transform="translate(32,32)">
+    <!-- Headset -->
+    <path d="M-12 -6 Q-12 -20 0 -20 Q12 -20 12 -6" stroke="#4A9FD4" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Ear cups -->
+    <rect x="-16" y="-10" width="8" height="14" rx="4" fill="#4A9FD4"/>
+    <rect x="8" y="-10" width="8" height="14" rx="4" fill="#6BBFED"/>
+    
+    <!-- Mic -->
+    <path d="M8 4 L8 12 Q8 18 0 18" stroke="#6BBFED" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="0" cy="18" r="3" fill="#4A9FD4"/>
+  </g>
+</svg>

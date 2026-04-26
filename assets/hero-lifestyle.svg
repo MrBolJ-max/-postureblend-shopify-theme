@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F6FF"/>
+      <stop offset="50%" style="stop-color:#F0FAFF"/>
+      <stop offset="100%" style="stop-color:#E0F2FE"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A9FD4;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#6BBFED;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C69;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#FFB088;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+
+  <!-- Soft glow orbs -->
+  <circle cx="300" cy="300" r="400" fill="url(#glow)"/>
+  <circle cx="1600" cy="700" r="350" fill="url(#accentGlow)"/>
+
+  <!-- Abstract woman silhouette - confident posture -->
+  <g transform="translate(960, 540)" opacity="0.9">
+    <!-- Body outline - elegant confident stance -->
+    <path d="M-80 180 Q-85 80 -50 0 Q-30 -60 0 -80 Q30 -60 50 0 Q85 80 80 180" 
+          fill="url(#glow)" stroke="#4A9FD4" stroke-width="3" opacity="0.6"/>
+    
+    <!-- Head -->
+    <ellipse cx="0" cy="-120" rx="35" ry="40" fill="#4A9FD4" opacity="0.8"/>
+    
+    <!-- Shoulders back - confident -->
+    <path d="M-70 -20 Q-90 -10 -100 20" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M70 -20 Q90 -10 100 20" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+    
+    <!-- Spine line - straight -->
+    <line x1="0" y1="-80" x2="0" y2="180" stroke="#FF8C69" stroke-width="3" opacity="0.5" stroke-dasharray="8,4"/>
+    
+    <!-- Arms confident -->
+    <path d="M-60 10 L-80 60" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M60 10 L80 60" stroke="#4A9FD4" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- Floating elements -->
+  <g opacity="0.4">
+    <circle cx="200" cy="200" r="8" fill="#4A9FD4"/>
+    <circle cx="1700" cy="300" r="12" fill="#FF8C69"/>
+    <circle cx="1500" cy="800" r="6" fill="#4A9FD4"/>
+    <circle cx="400" cy="900" r="10" fill="#6BBFED"/>
+    <circle cx="1800" cy="600" r="8" fill="#FFB088"/>
+  </g>
+
+  <!-- Text -->
+  <text x="960" y="850" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="600" fill="#2D3748" text-anchor="middle" letter-spacing="-1">
+    Stand Tall. Feel Confident.
+  </text>
+  
+  <text x="960" y="920" font-family="Inter, -apple-system, sans-serif" font-size="28" fill="#718096" text-anchor="middle">
+    The wireless bra that corrects your posture while you work
+  </text>
+
+  <!-- CTA Button -->
+  <g transform="translate(960, 1000)">
+    <rect x="-160" y="-30" width="320" height="60" rx="30" fill="url(#glow)" stroke="#4A9FD4" stroke-width="2"/>
+    <text x="0" y="12" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#4A9FD4" text-anchor="middle">
+      SHOP NOW — $29.99
+    </text>
+  </g>
+
+  <!-- Trust pills -->
+  <g transform="translate(960, 180)">
+    <rect x="-320" y="-22" width="180" height="44" rx="22" fill="rgba(74,159,212,0.1)" stroke="rgba(74,159,212,0.2)" stroke-width="1"/>
+    <text x="-230" y="10" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#4A9FD4" text-anchor="middle">✓ 30-Day Guarantee</text>
+    
+    <rect x="-90" y="-22" width="180" height="44" rx="22" fill="rgba(74,159,212,0.1)" stroke="rgba(74,159,212,0.2)" stroke-width="1"/>
+    <text x="0" y="10" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#4A9FD4" text-anchor="middle">✓ Free Shipping</text>
+    
+    <rect x="140" y="-22" width="180" height="44" rx="22" fill="rgba(74,159,212,0.1)" stroke="rgba(74,159,212,0.2)" stroke-width="1"/>
+    <text x="230" y="10" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#4A9FD4" text-anchor="middle">✓ 50,000+ Sold</text>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<style>
+.announcement-bar {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #222;
+}
+.announcement-bar a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+</style>
+
+<div class="announcement-bar" role="region" aria-label="Announcement">
+  <span>{{ section.settings.text | default: "FREE SHIPPING ON ORDERS OVER $50 — 30 DAY POSTURE GUARANTEE" }}</span>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement Text",
+      "default": "FREE SHIPPING ON ORDERS OVER $50 — 30 DAY POSTURE GUARANTEE"
+    }
+  ],
+  "presets": [{"name": "Announcement Bar"}]
+}
+{% endschema %}

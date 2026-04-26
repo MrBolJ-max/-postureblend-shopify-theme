@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF5F0"/>
+      <stop offset="100%" style="stop-color:#FFEDE6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#bg)" rx="20"/>
+
+  <!-- Urgency elements -->
+  <g transform="translate(400, 100)">
+    <text x="0" y="0" font-family="Georgia, serif" font-size="28" font-weight="600" fill="#FF6B6B" text-anchor="middle">
+      ⚡ Flash Sale — 40% Off
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="18" fill="#718096" text-anchor="middle">
+      Limited time offer. Don't miss out.
+    </text>
+  </g>
+
+  <!-- Timer -->
+  <g transform="translate(400, 200)">
+    <rect x="-180" y="-40" width="360" height="80" rx="40" fill="rgba(255,107,107,0.1)" stroke="#FF6B6B" stroke-width="2"/>
+    
+    <text x="0" y="10" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#FF6B6B" text-anchor="middle" letter-spacing="4">
+      06:23:45
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="12" fill="#FF6B6B" text-anchor="middle" letter-spacing="8">
+      HRS  MIN  SEC
+    </text>
+  </g>
+
+  <!-- Stock counter -->
+  <g transform="translate(400, 320)">
+    <rect x="-150" y="-30" width="300" height="60" rx="30" fill="rgba(255,140,105,0.1)" stroke="#FF8C69" stroke-width="1"/>
+    
+    <text x="0" y="8" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#FF8C69" text-anchor="middle">
+      🔥 Only 12 left in stock — Selling fast!
+    </text>
+  </g>
+</svg>

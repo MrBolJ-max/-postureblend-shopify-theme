@@ -1,0 +1,63 @@
+POSTUREBLEND BRAND ASSETS
+=========================
+
+LOGO
+----
+Primary: assets/logo.svg
+- PostureBlend wordmark
+- Georgia serif font
+- Slate blue gradient (#2D5A7B → #4A90B8)
+- Clean, premium feel
+
+Favicon: assets/favicon.svg
+- PB monogram in circle
+- Same brand colors
+- Scalable for all devices
+
+COLOR PALETTE
+-------------
+Primary:     #2D5A7B  (Slate Blue)
+Secondary:   #4A90B8  (Sky Blue)
+Accent:      #E8B86D  (Warm Gold)
+Dark:        #1A3A4F  (Deep Navy)
+Light:       #F0F4F8  (Ice White)
+Success:     #27AE60  (Green)
+Urgent:      #E74C3C  (Red)
+
+TYPOGRAPHY
+-----------
+Headings: Georgia, Times New Roman, serif
+Body: Inter, -apple-system, sans-serif
+
+IMAGES NEEDED (Upload via Shopify Admin)
+-----------------------------------------
+□ hero-lifestyle.jpg      — Woman at desk vs standing tall
+□ product-front.jpg       — Bra front view on white
+□ product-back.jpg        — Bra back view showing support straps
+□ product-detail.jpg      — Close-up of wireless cups
+□ before-after.jpg        — Posture comparison split
+□ size-guide.jpg          — Measurement diagram
+□ model-1.jpg             — Lifestyle model photo
+□ model-2.jpg             — Second lifestyle angle
+□ review-avatars/         — Customer photos (5-10)
+
+TRUST BADGE ICONS
+-----------------
+□ icon-shipping.png       — Free shipping truck
+□ icon-returns.png        — 30-day return arrow
+□ icon-secure.png         — Lock/security shield
+□ icon-support.png        — Headset/customer service
+
+BRAND VOICE
+-----------
+Empowering, not shaming
+"Fix your posture" not "your posture is bad"
+Focus on confidence, comfort, daily wins
+Professional but warm
+Scientific credibility (posture correction)
+
+TAGLINES
+--------
+Primary: "Stand Tall. Feel Confident."
+Secondary: "Your Desk Job Is Destroying Your Posture. This Bra Fixes It."
+CTA: "Fix Your Posture Today — 30-Day Comfort Guarantee"

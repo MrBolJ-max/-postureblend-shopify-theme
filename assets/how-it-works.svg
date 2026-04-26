@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0FAFF"/>
+      <stop offset="100%" style="stop-color:#E8F6FF"/>
+    </linearGradient>
+    <linearGradient id="step1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A9FD4"/>
+      <stop offset="100%" style="stop-color:#6BBFED"/>
+    </linearGradient>
+    <linearGradient id="step2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C69"/>
+      <stop offset="100%" style="stop-color:#FFB088"/>
+    </linearGradient>
+    <linearGradient id="step3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#48BB78"/>
+      <stop offset="100%" style="stop-color:#68D391"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg)" rx="20"/>
+
+  <!-- Title -->
+  <text x="600" y="80" font-family="Georgia, serif" font-size="36" font-weight="600" fill="#2D3748" text-anchor="middle">
+    How It Works
+  </text>
+  <text x="600" y="120" font-family="Inter, sans-serif" font-size="20" fill="#718096" text-anchor="middle">
+    Three simple steps to better posture
+  </text>
+
+  <!-- Connecting line -->
+  <line x1="250" y1="320" x2="950" y2="320" stroke="#4A9FD4" stroke-width="3" stroke-dasharray="12,8" opacity="0.3"/>
+
+  <!-- Step 1 -->
+  <g transform="translate(200, 320)">
+    <circle cx="0" cy="-80" r="70" fill="url(#step1)" opacity="0.15"/>
+    <circle cx="0" cy="-80" r="55" fill="url(#step1)"/>
+    <text x="0" y="-70" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#FFF" text-anchor="middle">1</text>
+    
+    <text x="0" y="40" font-family="Georgia, serif" font-size="24" font-weight="600" fill="#2D3748" text-anchor="middle">Slip It On</text>
+    <text x="0" y="75" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">Put on like any bra—</text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">no complicated straps</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g transform="translate(600, 320)">
+    <circle cx="0" cy="-80" r="70" fill="url(#step2)" opacity="0.15"/>
+    <circle cx="0" cy="-80" r="55" fill="url(#step2)"/>
+    <text x="0" y="-70" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#FFF" text-anchor="middle">2</text>
+    
+    <text x="0" y="40" font-family="Georgia, serif" font-size="24" font-weight="600" fill="#2D3748" text-anchor="middle">Feel The Support</text>
+    <text x="0" y="75" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">X-straps gently pull</text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">shoulders back</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g transform="translate(1000, 320)">
+    <circle cx="0" cy="-80" r="70" fill="url(#step3)" opacity="0.15"/>
+    <circle cx="0" cy="-80" r="55" fill="url(#step3)"/>
+    <text x="0" y="-70" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#FFF" text-anchor="middle">3</text>
+    
+    <text x="0" y="40" font-family="Georgia, serif" font-size="24" font-weight="600" fill="#2D3748" text-anchor="middle">Stand Taller</text>
+    <text x="0" y="75" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">Results in 2-4 weeks</text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">of daily wear</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="600" y="520" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+    Wear 8+ hours daily for best results • Adjustable straps • Machine washable
+  </text>
+</svg>

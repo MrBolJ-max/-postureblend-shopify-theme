@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0FAFF"/>
+      <stop offset="100%" style="stop-color:#E8F6FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg)" rx="20"/>
+
+  <!-- Title -->
+  <text x="600" y="80" font-family="Georgia, serif" font-size="36" font-weight="600" fill="#2D3748" text-anchor="middle">
+    What Our Customers Say
+  </text>
+
+  <!-- Review 1 -->
+  <g transform="translate(200, 320)">
+    <rect x="-170" y="-140" width="340" height="280" rx="20" fill="#FFF" stroke="rgba(74,159,212,0.15)" stroke-width="2"/>
+    
+    <!-- Stars -->
+    <text x="0" y="-100" font-size="24" fill="#FF8C69" text-anchor="middle">★★★★★</text>
+    
+    <!-- Quote -->
+    <text x="0" y="-50" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      "My posture improved in just
+    </text>
+    <text x="0" y="-25" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      2 weeks. No more back pain
+    </text>
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      at my desk job!"
+    </text>
+    
+    <!-- Avatar -->
+    <circle cx="0" cy="70" r="25" fill="#4A9FD4" opacity="0.2"/>
+    <text x="0" y="78" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#4A9FD4" text-anchor="middle">Sarah M.</text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-size="12" fill="#718096" text-anchor="middle">Verified Buyer</text>
+  </g>
+
+  <!-- Review 2 -->
+  <g transform="translate(600, 320)">
+    <rect x="-170" y="-140" width="340" height="280" rx="20" fill="#FFF" stroke="rgba(255,140,105,0.15)" stroke-width="2"/>
+    
+    <!-- Stars -->
+    <text x="0" y="-100" font-size="24" fill="#FF8C69" text-anchor="middle">★★★★★</text>
+    
+    <!-- Quote -->
+    <text x="0" y="-50" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      "Finally a posture bra that
+    </text>
+    <text x="0" y="-25" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      looks good and feels
+    </text>
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      amazing. Game changer!"
+    </text>
+    
+    <!-- Avatar -->
+    <circle cx="0" cy="70" r="25" fill="#FF8C69" opacity="0.2"/>
+    <text x="0" y="78" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FF8C69" text-anchor="middle">Jennifer K.</text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-size="12" fill="#718096" text-anchor="middle">Verified Buyer</text>
+  </g>
+
+  <!-- Review 3 -->
+  <g transform="translate(1000, 320)">
+    <rect x="-170" y="-140" width="340" height="280" rx="20" fill="#FFF" stroke="rgba(72,187,120,0.15)" stroke-width="2"/>
+    
+    <!-- Stars -->
+    <text x="0" y="-100" font-size="24" fill="#FF8C69" text-anchor="middle">★★★★★</text>
+    
+    <!-- Quote -->
+    <text x="0" y="-50" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      "Worth every penny. I wear
+    </text>
+    <text x="0" y="-25" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      it daily and my posture is
+    </text>
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      noticeably better."
+    </text>
+    
+    <!-- Avatar -->
+    <circle cx="0" cy="70" r="25" fill="#48BB78" opacity="0.2"/>
+    <text x="0" y="78" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#48BB78" text-anchor="middle">Amanda R.</text>
+    <text x="0" y="100" font-family="Inter, sans-serif" font-size="12" fill="#718096" text-anchor="middle">Verified Buyer</text>
+  </g>
+</svg>

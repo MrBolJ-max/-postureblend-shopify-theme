@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0FAFF"/>
+      <stop offset="100%" style="stop-color:#E8F6FF"/>
+    </linearGradient>
+    <linearGradient id="feature1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A9FD4"/>
+      <stop offset="100%" style="stop-color:#6BBFED"/>
+    </linearGradient>
+    <linearGradient id="feature2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C69"/>
+      <stop offset="100%" style="stop-color:#FFB088"/>
+    </linearGradient>
+    <linearGradient id="feature3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#48BB78"/>
+      <stop offset="100%" style="stop-color:#68D391"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)" rx="20"/>
+
+  <!-- Title -->
+  <text x="600" y="80" font-family="Georgia, serif" font-size="42" font-weight="600" fill="#2D3748" text-anchor="middle">
+    Why PostureBlend Works
+  </text>
+  <text x="600" y="120" font-family="Inter, sans-serif" font-size="20" fill="#718096" text-anchor="middle">
+    Three key features that set us apart
+  </text>
+
+  <!-- Feature 1: Posture Support -->
+  <g transform="translate(200, 400)">
+    <circle cx="0" cy="-80" r="60" fill="url(#feature1)" opacity="0.15"/>
+    <circle cx="0" cy="-80" r="45" fill="url(#feature1)"/>
+    <!-- Spine icon -->
+    <path d="M-8 -100 L-8 -60" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M0 -105 L0 -55" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M8 -100 L8 -60" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="0" cy="-110" r="8" fill="#FFF"/>
+    
+    <text x="0" y="20" font-family="Georgia, serif" font-size="24" font-weight="600" fill="#2D3748" text-anchor="middle">Posture Support</text>
+    <text x="0" y="55" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">X-strap design gently pulls</text>
+    <text x="0" y="80" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">shoulders into alignment</text>
+  </g>
+
+  <!-- Feature 2: Wireless Comfort -->
+  <g transform="translate(600, 400)">
+    <circle cx="0" cy="-80" r="60" fill="url(#feature2)" opacity="0.15"/>
+    <circle cx="0" cy="-80" r="45" fill="url(#feature2)"/>
+    <!-- Wireless icon -->
+    <path d="M-20 -90 Q0 -110 20 -90" stroke="#FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M-12 -82 Q0 -92 12 -82" stroke="#FFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="0" cy="-70" r="4" fill="#FFF"/>
+    
+    <text x="0" y="20" font-family="Georgia, serif" font-size="24" font-weight="600" fill="#2D3748" text-anchor="middle">Wireless Comfort</text>
+    <text x="0" y="55" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">No underwire, no digging,</text>
+    <text x="0" y="80" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">all-day comfort</text>
+  </g>
+
+  <!-- Feature 3: Breathable Fabric -->
+  <g transform="translate(1000, 400)">
+    <circle cx="0" cy="-80" r="60" fill="url(#feature3)" opacity="0.15"/>
+    <circle cx="0" cy="-80" r="45" fill="url(#feature3)"/>
+    <!-- Airflow icon -->
+    <path d="M-15 -85 L0 -100 L15 -85" stroke="#FFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-15 -70 L0 -85 L15 -70" stroke="#FFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <path d="M-15 -55 L0 -70 L15 -55" stroke="#FFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+    
+    <text x="0" y="20" font-family="Georgia, serif" font-size="24" font-weight="600" fill="#2D3748" text-anchor="middle">Breathable Fabric</text>
+    <text x="0" y="55" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">Mesh panels keep you</text>
+    <text x="0" y="80" font-family="Inter, sans-serif" font-size="16" fill="#718096" text-anchor="middle">cool and dry all day</text>
+  </g>
+
+  <!-- Bottom CTA -->
+  <g transform="translate(600, 720)">
+    <rect x="-130" y="-25" width="260" height="50" rx="25" fill="url(#feature1)" opacity="0.15" stroke="#4A9FD4" stroke-width="2"/>
+    <text x="0" y="10" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#4A9FD4" text-anchor="middle">
+      Experience the Difference
+    </text>
+  </g>
+</svg>

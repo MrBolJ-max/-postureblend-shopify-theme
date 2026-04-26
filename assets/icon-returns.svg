@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#FF8C69" opacity="0.1"/>
+  <g transform="translate(32,32)">
+    <!-- Arrow loop -->
+    <path d="M-14 -6 Q-14 -18 0 -18 Q14 -18 14 -6" stroke="#FF8C69" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M14 6 Q14 18 0 18 Q-14 18 -14 6" stroke="#FFB088" stroke-width="4" fill="none" stroke-linecap="round"/>
+    
+    <!-- Arrow heads -->
+    <path d="M10 -14 L14 -6 L18 -14" stroke="#FF8C69" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M-10 14 L-14 6 L-18 14" stroke="#FFB088" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>

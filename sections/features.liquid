@@ -1,0 +1,113 @@
+<style>
+.features-section {
+  padding: 100px 24px;
+  background: #0a0a0a;
+  border-top: 1px solid #1a1a1a;
+}
+.features-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+.features-header h2 {
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+.features-header p {
+  color: rgba(255,255,255,0.4);
+  font-size: 16px;
+}
+.features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #1a1a1a;
+}
+.feature-card {
+  background: #000;
+  padding: 48px 32px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.feature-card:hover {
+  background: #0a0a0a;
+}
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 20px;
+}
+.feature-card h3 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.feature-card p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .features-section { padding: 60px 20px; }
+}
+</style>
+
+<section class="features-section" id="features">
+  <div class="features-header">
+    <h2>Why 50,000 Women Made The Switch</h2>
+    <p>No gimmicks. No compromises. Just results.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">01</div>
+      <h3>Wireless Freedom</h3>
+      <p>No underwire, no digging, no marks. Seamless support that feels like nothing.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">02</div>
+      <h3>Posture Correcting</h3>
+      <p>X-back tension bands pull shoulders into alignment. Instant confidence boost.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">03</div>
+      <h3>All Day Comfort</h3>
+      <p>Breathable 4-way stretch fabric. Wear it from 6AM to midnight.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">04</div>
+      <h3>Invisible Design</h3>
+      <p>Smooth silhouette. No visible lines under any outfit.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">05</div>
+      <h3>30 Day Guarantee</h3>
+      <p>Not satisfied? Full refund. No questions asked. Zero risk.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">06</div>
+      <h3>Fast Shipping</h3>
+      <p>Tracked delivery worldwide. Most orders arrive in 5-10 days.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Features Grid",
+  "presets": [{"name": "Features Grid"}]
+}
+{% endschema %}

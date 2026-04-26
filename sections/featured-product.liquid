@@ -1,0 +1,239 @@
+{% style %}
+.featured-product-section {
+  padding: 8rem 2rem;
+  background: #ffffff;
+}
+
+.featured-product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.featured-product__media {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.featured-product__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.featured-product__badge {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: linear-gradient(135deg, #FF6B9D, #FF8FB0);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.featured-product__content {
+  padding: 2rem 0;
+}
+
+.featured-product__heading {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: #2D2D2D;
+}
+
+.featured-product__description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.featured-product__price {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.featured-product__price-current {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #FF6B9D;
+}
+
+.featured-product__price-compare {
+  font-size: 2rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.featured-product__price-save {
+  background: #2ECC71;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.featured-product__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+}
+
+.featured-product__features li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  color: #444;
+  border-bottom: 1px solid #eee;
+}
+
+.featured-product__features li::before {
+  content: '✓';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #2ECC71;
+  color: white;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.featured-product__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #FF6B9D, #FF8FB0);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 40px rgba(255, 107, 157, 0.3);
+}
+
+.featured-product__button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(255, 107, 157, 0.4);
+}
+
+.featured-product__guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: #666;
+}
+
+@media screen and (max-width: 989px) {
+  .featured-product-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+{% endstyle %}
+
+{%- assign product = all_products[section.settings.product] -%}
+
+<div class="featured-product-section">
+  <div class="featured-product-container">
+    <div class="featured-product__media">
+      {% if product.featured_image != blank %}
+        <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" loading="lazy">
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+      <div class="featured-product__badge">Bestseller</div>
+    </div>
+    
+    <div class="featured-product__content">
+      <h2 class="featured-product__heading">{{ section.settings.heading | default: product.title }}</h2>
+      
+      <p class="featured-product__description">{{ section.settings.description }}</p>
+      
+      <div class="featured-product__price">
+        <span class="featured-product__price-current">${{ product.price | money_without_currency }}</span>
+        {% if product.compare_at_price > product.price %}
+          <span class="featured-product__price-compare">${{ product.compare_at_price | money_without_currency }}</span>
+          <span class="featured-product__price-save">Save {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</span>
+        {% endif %}
+      </div>
+      
+      <ul class="featured-product__features">
+        <li>Wireless & Seamless Design</li>
+        <li>Front Closure — Easy On/Off</li>
+        <li>Cross-Back Posture Support</li>
+        <li>30-Day Comfort Guarantee</li>
+      </ul>
+      
+      <form method="post" action="/cart/add" class="featured-product__form">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit" class="featured-product__button">Add to Cart — {{ product.price | money }}</button>
+      </form>
+      
+      <div class="featured-product__guarantee">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#2ECC71"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        30-Day Comfort Guarantee — Free Size Exchanges
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "PostureBlend™ Wireless Posture Bra"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "14,000+ women have made the switch. Are you next?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Product"
+    }
+  ]
+}
+{% endschema %}

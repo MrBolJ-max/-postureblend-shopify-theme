@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0FAFF"/>
+      <stop offset="100%" style="stop-color:#E8F6FF"/>
+    </linearGradient>
+    <linearGradient id="braGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A9FD4"/>
+      <stop offset="100%" style="stop-color:#6BBFED"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#4A9FD4" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg)" rx="20"/>
+
+  <!-- Bra back view - posture support -->
+  <g filter="url(#shadow)" transform="translate(400, 450)">
+    <!-- Main back panel -->
+    <rect x="-155" y="-180" width="310" height="380" rx="35" fill="url(#braGrad)"/>
+    
+    <!-- X-strap support system - coral accent -->
+    <path d="M-130 -155 L130 185" stroke="#FF8C69" stroke-width="20" opacity="0.9" stroke-linecap="round"/>
+    <path d="M130 -155 L-130 185" stroke="#FF8C69" stroke-width="20" opacity="0.9" stroke-linecap="round"/>
+    
+    <!-- X intersection highlight -->
+    <circle cx="0" cy="15" r="15" fill="#FF8C69" opacity="0.6"/>
+    <circle cx="0" cy="15" r="8" fill="#FFB088"/>
+    
+    <!-- Reinforcement panels -->
+    <rect x="-100" y="-100" width="200" height="200" rx="18" fill="rgba(255,255,255,0.1)"/>
+    <rect x="-60" y="-60" width="120" height="120" rx="12" fill="rgba(255,255,255,0.15)"/>
+    
+    <!-- Support zones -->
+    <circle cx="-120" cy="-140" r="8" fill="#FF8C69"/>
+    <circle cx="120" cy="-140" r="8" fill="#FF8C69"/>
+    <circle cx="0" cy="170" r="8" fill="#FF8C69"/>
+    
+    <!-- Support zone labels -->
+    <text x="-120" y="-110" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#FF8C69" text-anchor="middle">SHOULDER</text>
+    <text x="120" y="-110" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#FF8C69" text-anchor="middle">SHOULDER</text>
+    <text x="0" y="200" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#FF8C69" text-anchor="middle">LOWER BACK</text>
+    
+    <!-- Clasp -->
+    <rect x="-25" y="185" width="50" height="22" rx="8" fill="#2D3748"/>
+    <line x1="0" y1="185" x2="0" y2="207" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  </g>
+
+  <!-- Label -->
+  <text x="400" y="820" font-family="Georgia, serif" font-size="32" font-weight="600" fill="#2D3748" text-anchor="middle">
+    Posture Support System
+  </text>
+  <text x="400" y="860" font-family="Inter, sans-serif" font-size="20" fill="#718096" text-anchor="middle">
+    X-Strap Back Design
+  </text>
+
+  <!-- Badge -->
+  <g transform="translate(400, 920)">
+    <rect x="-110" y="-20" width="220" height="40" rx="20" fill="rgba(72,187,120,0.15)" stroke="#48BB78" stroke-width="1"/>
+    <text x="0" y="8" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#48BB78" text-anchor="middle">
+      ERGONOMIC BACK SUPPORT
+    </text>
+  </g>
+</svg>

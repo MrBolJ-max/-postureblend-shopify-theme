@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-video",
+      "settings": {}
+    },
+    "features": {
+      "type": "features",
+      "settings": {}
+    },
+    "product": {
+      "type": "product-showcase",
+      "settings": {}
+    },
+    "how_it_works": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "social_proof": {
+      "type": "social-proof",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "features",
+    "product",
+    "how_it_works",
+    "social_proof"
+  ]
+}

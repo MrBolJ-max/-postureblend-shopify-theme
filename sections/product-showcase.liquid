@@ -1,0 +1,309 @@
+<style>
+.product-section {
+  padding: 100px 24px;
+  background: #000;
+  border-top: 1px solid #1a1a1a;
+}
+.product-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.product-gallery {
+  position: relative;
+}
+.product-main-image {
+  width: 100%;
+  border-radius: 0;
+  filter: grayscale(20%) contrast(1.1);
+}
+.product-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  color: #000;
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.product-info h1 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.product-rating-stars {
+  color: #fff;
+  font-size: 16px;
+}
+.product-rating-text {
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+}
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #1a1a1a;
+}
+.price-current {
+  font-size: 42px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -2px;
+}
+.price-compare {
+  font-size: 20px;
+  color: rgba(255,255,255,0.3);
+  text-decoration: line-through;
+}
+.price-save {
+  background: #fff;
+  color: #000;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.product-description {
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+.product-options {
+  margin-bottom: 24px;
+}
+.option-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: block;
+}
+.color-swatches {
+  display: flex;
+  gap: 12px;
+}
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+.color-swatch.active {
+  border-color: #fff;
+  transform: scale(1.1);
+}
+.color-swatch[data-color="black"] { background: #111; border: 1px solid #333; }
+.color-swatch[data-color="nude"] { background: #c4a882; }
+.color-swatch[data-color="white"] { background: #f5f5f5; }
+.size-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.size-btn {
+  min-width: 48px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.size-btn:hover, .size-btn.active {
+  border-color: #fff;
+  background: #fff;
+  color: #000;
+}
+.quantity-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.quantity-selector button {
+  width: 44px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+.quantity-selector input {
+  width: 50px;
+  height: 48px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: transparent;
+}
+.add-to-cart-btn {
+  flex: 1;
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 18px 32px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.add-to-cart-btn:hover {
+  background: rgba(255,255,255,0.9);
+}
+.trust-mini {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #1a1a1a;
+  flex-wrap: wrap;
+}
+.trust-mini-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  .product-wrapper { grid-template-columns: 1fr; gap: 32px; }
+  .product-section { padding: 60px 20px; }
+  .price-current { font-size: 32px; }
+}
+</style>
+
+<section class="product-section" id="shop">
+  <div class="product-wrapper">
+    <div class="product-gallery">
+      <div class="product-badge">BESTSELLER</div>
+      {% if section.settings.product_image != blank %}
+        <img src="{{ section.settings.product_image | image_url: width: 800 }}" alt="PostureBlend Bra" class="product-main-image" loading="lazy">
+      {% else %}
+        <img src="https://placehold.co/600x700/111/fff?text=POSTUREBLEND" alt="PostureBlend Bra" class="product-main-image" loading="lazy">
+      {% endif %}
+    </div>
+    <div class="product-info">
+      <h1>PostureBlend Wireless Posture Correction Bra</h1>
+      <div class="product-rating">
+        <span class="product-rating-stars">★★★★★</span>
+        <span class="product-rating-text">4.9 (12,400+ reviews)</span>
+      </div>
+      <div class="product-price">
+        <span class="price-current">$29.99</span>
+        <span class="price-compare">$59.99</span>
+        <span class="price-save">SAVE 50%</span>
+      </div>
+      <p class="product-description">
+        The wireless support system that actually works. X-back design pulls shoulders into alignment while breathable, 4-way stretch fabric moves with you all day. No underwire. No discomfort. Just results.
+      </p>
+
+      <div class="product-options">
+        <span class="option-label">Color</span>
+        <div class="color-swatches">
+          <div class="color-swatch active" data-color="black" title="Midnight"></div>
+          <div class="color-swatch" data-color="nude" title="Natural"></div>
+          <div class="color-swatch" data-color="white" title="White"></div>
+        </div>
+      </div>
+
+      <div class="product-options">
+        <span class="option-label">Size</span>
+        <div class="size-options">
+          <button class="size-btn">S</button>
+          <button class="size-btn active">M</button>
+          <button class="size-btn">L</button>
+          <button class="size-btn">XL</button>
+          <button class="size-btn">2XL</button>
+          <button class="size-btn">3XL</button>
+        </div>
+      </div>
+
+      <div class="quantity-row">
+        <div class="quantity-selector">
+          <button onclick="this.nextElementSibling.stepDown()">−</button>
+          <input type="number" value="1" min="1" max="10">
+          <button onclick="this.previousElementSibling.stepUp()">+</button>
+        </div>
+        <button class="add-to-cart-btn">
+          ADD TO CART — $29.99
+        </button>
+      </div>
+
+      <div class="trust-mini">
+        <div class="trust-mini-item">✓ 30-Day Guarantee</div>
+        <div class="trust-mini-item">✓ Free Returns</div>
+        <div class="trust-mini-item">✓ Secure Checkout</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.color-swatch').forEach(swatch => {
+  swatch.addEventListener('click', function() {
+    document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+document.querySelectorAll('.size-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Showcase",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }
+  ],
+  "presets": [{"name": "Product Showcase"}]
+}
+{% endschema %}

@@ -1,0 +1,61 @@
+{% style %}
+.urgency-banner-section {
+  position: relative;
+  z-index: 100;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@media screen and (max-width: 749px) {
+  .urgency-banner-section {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+}
+{% endstyle %}
+
+<div class="urgency-banner-section" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+  <span>{{ section.settings.text }}</span>
+</div>
+
+{% schema %}
+{
+  "name": "Urgency Banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Banner Text",
+      "default": "🔥 1,247 women bought this in the last 48 hours | Free shipping on orders over $35"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FF6B9D"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Urgency Banner"
+    }
+  ]
+}
+{% endschema %}
