@@ -1,0 +1,17 @@
+{
+  "accessibility": {
+    "skip_to_text": "Skip to content"
+  },
+  "general": {
+    "cart": {
+      "view_cart": "View cart",
+      "item_count": {
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      }
+    },
+    "navigation": {
+      "search": "Search"
+    }
+  }
+}
