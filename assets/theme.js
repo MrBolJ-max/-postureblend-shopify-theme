@@ -52,42 +52,35 @@
       });
     },
 
-    // Stock counter with realistic fluctuation
+    // Stock counter — reads real inventory from data attribute set by Liquid
     initStockCounter() {
       const counters = document.querySelectorAll('[data-stock-counter]');
       counters.forEach(counter => {
-        let current = parseInt(counter.dataset.stock) || this.config.stockLimit;
-        counter.textContent = current;
-        
-        setInterval(() => {
-          if (current > 5 && Math.random() > 0.65) {
-            current--;
-            counter.textContent = current;
-            counter.style.transform = 'scale(1.2)';
-            counter.style.color = '#FF6B6B';
-            setTimeout(() => {
-              counter.style.transform = 'scale(1)';
-              counter.style.color = '';
-            }, 300);
-          }
-        }, Math.random() * 50000 + 25000);
+        const initial = parseInt(counter.dataset.stock);
+        if (isNaN(initial)) return;
+        counter.textContent = initial;
       });
     },
 
-    // Countdown timer
+    // Countdown timer — reads deadline from data attribute (set in Liquid or admin)
     initCountdownTimer() {
       const timers = document.querySelectorAll('[data-countdown]');
       timers.forEach(timer => {
-        const endTime = new Date();
-        endTime.setHours(endTime.getHours() + this.config.saleEndHours);
-        
+        const deadlineAttr = timer.dataset.deadline;
+        if (!deadlineAttr) return;
+        const endTime = new Date(deadlineAttr);
+        if (isNaN(endTime.getTime())) return;
+
         const update = () => {
           const diff = endTime - new Date();
           if (diff <= 0) { timer.textContent = '00:00:00'; return; }
-          const h = Math.floor(diff / 3600000);
+          const d = Math.floor(diff / 86400000);
+          const h = Math.floor((diff % 86400000) / 3600000);
           const m = Math.floor((diff % 3600000) / 60000);
           const s = Math.floor((diff % 60000) / 1000);
-          timer.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+          timer.textContent = d > 0
+            ? `${d}d ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`
+            : `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
         };
         update(); setInterval(update, 1000);
       });

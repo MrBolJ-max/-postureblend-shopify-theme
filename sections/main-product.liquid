@@ -1,22 +1,329 @@
+<style>
+.product-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.product-gallery {
+  position: sticky;
+  top: 100px;
+}
+.product-images {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.product-images .main-image {
+  width: 100%;
+  border-radius: 16px;
+  cursor: zoom-in;
+}
+.product-thumbnails {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+.product-thumbnails img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.product-thumbnails img.active {
+  border-color: #4A9FD4;
+}
+.product-details h1 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: #1E3A5F;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.price-current {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #1E3A5F;
+}
+.price-compare {
+  font-size: 1.2rem;
+  color: #718096;
+  text-decoration: line-through;
+}
+.price-save {
+  background: #FF8C69;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.product-description {
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.variant-select {
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fff;
+  cursor: pointer;
+}
+.quantity-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.quantity-selector button {
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #1E3A5F;
+  transition: background 0.2s;
+}
+.quantity-selector button:hover {
+  background: #F0FAFF;
+}
+.quantity-selector input {
+  width: 56px;
+  height: 48px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1E3A5F;
+}
+.add-to-cart-btn {
+  background: linear-gradient(135deg, #4A9FD4, #6BBFED);
+  color: #fff;
+  border: none;
+  padding: 18px 32px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 159, 212, 0.3);
+}
+.add-to-cart-btn.added {
+  background: #48BB78;
+}
+.dynamic-checkout {
+  margin-top: 8px;
+}
+.trust-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+.trust-mini-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #718096;
+}
+.stock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #FF6B6B;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.stock-badge .dot {
+  width: 8px;
+  height: 8px;
+  background: #FF6B6B;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@media (max-width: 768px) {
+  .product-page { grid-template-columns: 1fr; gap: 32px; padding: 40px 16px; }
+  .product-gallery { position: relative; top: 0; }
+}
+</style>
+
 <div class="product-page">
-  <div class="product-images">
-    {% for image in product.images %}
-      <img src="{{ image | image_url: width: 800 }}" alt="{{ product.title }}" loading="lazy">
-    {% endfor %}
+  <div class="product-gallery">
+    {%- if product.images.size > 0 -%}
+      <img id="main-product-image" src="{{ product.featured_image | image_url: width: 800 }}"
+           srcset="{{ product.featured_image | image_url: width: 400 }} 400w,
+                   {{ product.featured_image | image_url: width: 800 }} 800w,
+                   {{ product.featured_image | image_url: width: 1200 }} 1200w"
+           sizes="(max-width: 768px) 100vw, 50vw"
+           alt="{{ product.title | escape }}" class="main-image" loading="eager"
+           width="800" height="1000">
+      {%- if product.images.size > 1 -%}
+        <div class="product-thumbnails">
+          {%- for image in product.images -%}
+            <img src="{{ image | image_url: width: 150 }}" alt="{{ product.title | escape }}"
+                 onclick="document.getElementById('main-product-image').src='{{ image | image_url: width: 800 }}'"
+                 class="{% if forloop.first %}active{% endif %}" loading="lazy">
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
   </div>
-  
+
   <div class="product-details">
     <h1>{{ product.title }}</h1>
-    <div class="product-price">{{ product.price | money }}</div>
+
+    {%- if product.selected_or_first_available_variant.inventory_quantity > 0 and product.selected_or_first_available_variant.inventory_quantity <= 20 -%}
+      <div class="stock-badge">
+        <span class="dot"></span>
+        Only {{ product.selected_or_first_available_variant.inventory_quantity }} left in stock
+      </div>
+    {%- endif -%}
+
+    <div class="product-price">
+      <span class="price-current">{{ product.price | money }}</span>
+      {%- if product.compare_at_price > product.price -%}
+        <span class="price-compare">{{ product.compare_at_price | money }}</span>
+        <span class="price-save">Save {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</span>
+      {%- endif -%}
+    </div>
+
     <div class="product-description">{{ product.description }}</div>
-    
-    <form method="post" action="/cart/add">
-      <select name="id">
-        {% for variant in product.variants %}
-          <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-        {% endfor %}
-      </select>
-      <button type="submit" class="button">Add to Cart</button>
-    </form>
+
+    <product-form data-section-id="{{ section.id }}">
+      {%- form 'product', product, id: 'product-form-' | append: section.id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        {%- if product.has_only_default_variant == false -%}
+          <select name="id" class="variant-select" id="variant-select-{{ section.id }}"
+                  onchange="this.closest('product-form').querySelector('input[name=\x22id\x22]').value=this.value">
+            {%- for variant in product.variants -%}
+              <option value="{{ variant.id }}"
+                      {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+                      {% unless variant.available %}disabled{% endunless %}>
+                {{ variant.title }} — {{ variant.price | money }}
+                {%- unless variant.available -%} (Sold Out){%- endunless -%}
+              </option>
+            {%- endfor -%}
+          </select>
+        {%- endif -%}
+
+        <div class="quantity-wrapper">
+          <div class="quantity-selector">
+            <button type="button" onclick="let q=this.nextElementSibling;q.stepDown();q.dispatchEvent(new Event('change'))">−</button>
+            <input type="number" name="quantity" value="1" min="1" max="10">
+            <button type="button" onclick="let q=this.previousElementSibling;q.stepUp();q.dispatchEvent(new Event('change'))">+</button>
+          </div>
+          <button type="submit" class="add-to-cart-btn" id="add-to-cart-{{ section.id }}">
+            <span class="btn-text">Add to Cart — {{ product.price | money }}</span>
+          </button>
+        </div>
+
+        {{ form | payment_button }}
+      {%- endform -%}
+    </product-form>
+
+    <div class="trust-mini">
+      <div class="trust-mini-item">✓ 30-Day Guarantee</div>
+      <div class="trust-mini-item">✓ Free Shipping Over $35</div>
+      <div class="trust-mini-item">✓ Secure Checkout</div>
+    </div>
   </div>
 </div>
+
+<script>
+  document.querySelectorAll('.product-thumbnails img').forEach(thumb => {
+    thumb.addEventListener('click', function() {
+      document.querySelectorAll('.product-thumbnails img').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // AJAX add-to-cart with feedback
+  const productForm = document.querySelector('product-form[data-section-id="{{ section.id }}"]');
+  if (productForm) {
+    productForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.add-to-cart-btn');
+      const originalText = btn.querySelector('.btn-text').textContent;
+      btn.disabled = true;
+      btn.querySelector('.btn-text').textContent = 'Adding...';
+
+      const formData = new FormData(this.querySelector('form'));
+      try {
+        const res = await fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/javascript' }
+        });
+        if (res.ok) {
+          btn.classList.add('added');
+          btn.querySelector('.btn-text').textContent = '✓ Added to Cart!';
+          // Update cart count
+          const cartRes = await fetch('/cart.js');
+          const cart = await cartRes.json();
+          document.querySelectorAll('.cart-count').forEach(el => el.textContent = cart.item_count);
+          setTimeout(() => {
+            btn.classList.remove('added');
+            btn.querySelector('.btn-text').textContent = originalText;
+            btn.disabled = false;
+          }, 2000);
+        } else {
+          throw new Error('Add to cart failed');
+        }
+      } catch (err) {
+        btn.querySelector('.btn-text').textContent = 'Error — Try Again';
+        btn.disabled = false;
+        console.error(err);
+      }
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": [],
+  "presets": [{"name": "Main Product"}]
+}
+{% endschema %}

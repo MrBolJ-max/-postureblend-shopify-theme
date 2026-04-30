@@ -110,33 +110,32 @@
       </div>
     </div>
     <div class="footer-column">
-      <h4>Shop</h4>
+      <h4>{{ section.settings.menu_1_title | default: 'Shop' }}</h4>
       <ul>
-        <li><a href="/products/postureblend-wireless-posture-correction-bra">PostureBlend Bra</a></li>
-        <li><a href="/pages/sizing">Size Guide</a></li>
-        <li><a href="/pages/shipping">Shipping</a></li>
-        <li><a href="/pages/returns">Returns</a></li>
+        {%- for link in linklists[section.settings.menu_1].links -%}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
       </ul>
     </div>
     <div class="footer-column">
-      <h4>Company</h4>
+      <h4>{{ section.settings.menu_2_title | default: 'Company' }}</h4>
       <ul>
-        <li><a href="/pages/about">About</a></li>
-        <li><a href="/pages/faq">FAQ</a></li>
-        <li><a href="/pages/privacy">Privacy</a></li>
+        {%- for link in linklists[section.settings.menu_2].links -%}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
       </ul>
     </div>
     <div class="footer-column">
-      <h4>Support</h4>
+      <h4>{{ section.settings.menu_3_title | default: 'Support' }}</h4>
       <ul>
-        <li><a href="mailto:support@postureblend.com">Contact</a></li>
-        <li><a href="/pages/faq">Help</a></li>
-        <li><a href="#">Track Order</a></li>
+        {%- for link in linklists[section.settings.menu_3].links -%}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor -%}
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>PostureBlend. All rights reserved.</span>
+    <span>PostureBlend © {{ 'now' | date: '%Y' }}. All rights reserved.</span>
     <span>Designed for confidence.</span>
   </div>
 </footer>
@@ -144,6 +143,47 @@
 {% schema %}
 {
   "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menu 1",
+      "default": "footer",
+      "info": "First column menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_1_title",
+      "label": "Menu 1 Title",
+      "default": "Shop"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menu 2",
+      "default": "footer",
+      "info": "Second column menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_title",
+      "label": "Menu 2 Title",
+      "default": "Company"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_3",
+      "label": "Menu 3",
+      "default": "footer",
+      "info": "Third column menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_3_title",
+      "label": "Menu 3 Title",
+      "default": "Support"
+    }
+  ],
   "presets": [{"name": "Footer"}]
 }
 {% endschema %}

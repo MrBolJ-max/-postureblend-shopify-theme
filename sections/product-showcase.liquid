@@ -218,9 +218,18 @@
     <div class="product-gallery">
       <div class="product-badge">BESTSELLER</div>
       {% if section.settings.product_image != blank %}
-        <img src="{{ section.settings.product_image | image_url: width: 800 }}" alt="PostureBlend Bra" class="product-main-image" loading="lazy">
+        <img src="{{ section.settings.product_image | image_url: width: 800 }}" 
+             srcset="{{ section.settings.product_image | image_url: width: 400 }} 400w,
+                     {{ section.settings.product_image | image_url: width: 800 }} 800w,
+                     {{ section.settings.product_image | image_url: width: 1200 }} 1200w"
+             sizes="(max-width: 768px) 100vw, 50vw"
+             alt="PostureBlend Bra" class="product-main-image" loading="lazy"
+             width="600" height="700">
       {% else %}
-        <img src="https://placehold.co/600x700/111/fff?text=POSTUREBLEND" alt="PostureBlend Bra" class="product-main-image" loading="lazy">
+        {% comment %} NOTE: Upload real product image via Shopify admin > Theme > Customize {% endcomment %}
+        <div style="background:#f0f0f0;width:100%;aspect-ratio:6/7;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px;">
+          Upload product image in theme settings
+        </div>
       {% endif %}
     </div>
     <div class="product-info">
