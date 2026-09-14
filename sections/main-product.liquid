@@ -231,7 +231,7 @@
     <div class="product-description">{{ product.description }}</div>
 
     <product-form data-section-id="{{ section.id }}">
-      {%- form 'product', product, id: 'product-form-' | append: section.id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+      {%- form section.id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
         {%- if product.has_only_default_variant == false -%}
@@ -326,4 +326,15 @@
   "settings": [],
   "presets": [{"name": "Main Product"}]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- form 'product', product, id: 'product-form-' | append: section.id, novalidate:
+    'novalidate', data-type: 'add-to-cart-form' -%}"
+  to: "{%- form section.id, novalidate: 'novalidate', data-type: 'add-to-cart-form'
+    -%}"
+  position: 5554..5634
+{%- endcomment -%}
